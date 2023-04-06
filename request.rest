@@ -1,0 +1,35 @@
+###
+
+GET http://localhost:3000 HTTP/1.1
+
+###
+
+GET http://localhost:3000/a68b823c-7ca6-44bc-b721-fb4d5312cafc HTTP/1.1
+
+### CREATE USER
+
+POST http://localhost:3000/save HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "email": "email3@example.com",
+    "age": 30
+}
+ 
+### UPDATE USER
+
+POST http://localhost:3000/update/a68b823c-7ca6-44bc-b721-fb4d5312cafc HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Topklass",
+    "email": "Topklass@example.com",
+    "age": 57
+}
+
+### REMOVE USER
+
+POST http://localhost:3000/remove/a68b823c-7ca6-44bc-b721-fb4d5312cafc HTTP/1.1
+content-type: application/json
+ 

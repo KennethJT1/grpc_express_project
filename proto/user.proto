@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+service UserService {
+    rpc addUser (User) returns (User) {}
+    rpc getUsers (Empty) returns (Users) {}
+    rpc getUser (UserRequestId) returns (User) {}
+    
+    rpc update (User) returns (User) {}
+    rpc remove (UserRequestId) returns (Empty) {}
+}
+
+message Empty {}
+
+//adding user
+message User {
+    string id = 1;
+    string name = 2;
+    string email= 3;
+    int32 age = 4;
+}
+
+//getting users
+message Users {
+    repeated User users = 1;
+}
+// getting and updating user
+message UserRequestId {
+    string id = 1;
+}
